@@ -1,0 +1,14 @@
+<div id="user-details-wrapper">
+  <div id="username-bubble">{{ username[0].toUpperCase() }}</div>
+  <span id="username"> {{ username }} </span> <br>
+  <h3 id="fullName"> {{ fullName }} </h3> <br>
+  <span id='email'> {{ email }} </span>
+  <hr>
+  <div id="user-options">
+    <div class="user-option"> Settings </div>
+    <div class="user-option"> Download </div>
+  </div>
+  <div id='logout'>
+    <button id="logout-btn" (click)='logout()'>Logout</button>
+  </div>
+</div>

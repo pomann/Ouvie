@@ -1,0 +1,40 @@
+<div id="dashboard-workspace-projects-wrapper">
+  <span class="linkText" (click)='displayProjects();'>{{ username }}</span> > {{ projectName }}
+  <div id="project-header">
+    <div id="project-icon" class="project-item-details" >{{ projectName[0].toUpperCase() }}</div>
+    <div id="project-details" class="project-item-details">
+      <h2> {{ projectName }}</h2>
+      <span>Project Description goes here</span>
+    </div>
+  </div>
+  <hr>
+  <div id="project-info">
+    <span><img src="../../assets/images/git-commit.svg" width="15px" height="15px" id='logo'><b>Commits:</b> {{ commitCount }} </span>
+    <span><img src="../../assets/images/tree.svg" width="15px" height="15px" id='logo'><b>Branches:</b> {{ branches.length }} </span>
+  </div>
+  <div id="project-commit-wrapper">
+    <div id="project-commit">
+      Latest Commit: {{ lastCommit }}<br>
+      Commit Message
+    </div>
+  </div>
+  <span><b>Current Branch:</b></span>
+  <select id="branches" (change)='onBranchChange($event)'>
+    <option *ngFor='let item of branches ;let i = index' [value]='item'>{{ item }}</option>
+  </select>
+  <span style="float: right;">Commits on <b>branch: {{ activeBranch }}:</b> {{ commitsOnBranch }}</span>
+  <div id="project-item-wrapper">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Commit</th>
+        <th>Updated</th>
+      </tr>
+      <tr class="project-item" *ngFor='let item of files ;let i = index'>
+        <td> <img src="../../assets/images/file-text.svg" width="15px" height="15px" id='logo'> {{ item }}</td>
+        <td>Latest</td>
+        <td>Today</td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+#dashboard-workspace-projects-wrapper {
+  width: 900px;
+  height: 100%;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+#project-header {
+  width: 100%;
+  height: 85px;
+  margin-top: 10px;
+}
+
+#new-project-btn {
+  float: right;
+  padding: 5px;
+  background-color: #168F48;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+  color: white;
+}
+
+#project-info {
+  padding: 20px 0;
+  border-bottom: 1px solid gray;
+}
+
+#project-info img {
+  margin-right: 8px;
+}
+
+#project-info span {
+  margin-left: 20px;
+}
+
+#project-info span:first-child {
+  margin-left: 0;
+}
+
+hr {
+  background-color: gray;
+}
+
+#project-commit-wrapper {
+  width: 100%;
+  height: 70px;
+}
+
+#project-commit {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+}
+
+#project-item-wrapper {
+  width: calc(100% - 2px);
+  margin-top: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.project-item {
+  height: 20px;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+}
+
+.project-item:last-child {
+  margin-bottom: 0px;
+  border-bottom: 0px;
+}
+
+.icon-file-text2:before {
+  content: "\e926";
+}
+
+.project-item-details {
+  float: left;
+}
+
+#project-icon {
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+  background-color: #ccb5ff;
+  text-align: center;
+  font-size: 60px;
+}
+
+#project-icon:hover {
+  cursor: pointer;
+}
+
+#project-details {
+  margin-left: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  background-color: #e0e0e0;
+}
+
+tr {
+  border-bottom: 1px solid gray;
+}
+
+tr:last-child {
+  border-bottom: 0px;
+}
+
+th, td {
+  padding: 8px;
+}
+
+th:last-child, td:last-child {
+  text-align: right;
+}
+
+#branches {
+  margin-left: 10px;
+}

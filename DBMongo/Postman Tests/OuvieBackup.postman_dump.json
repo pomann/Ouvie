@@ -1,0 +1,1015 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "1cfda08f-870e-406c-be2e-b992b87e1054",
+			"name": "Registration",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"0d6096bc-2739-4666-848a-64412530a234",
+				"528411fa-88e7-4b40-a2fb-a1fc555f42ae",
+				"633680d7-6a9c-4e39-ada9-7a8e8275a8e5"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "0d6096bc-2739-4666-848a-64412530a234",
+					"name": "Username availability",
+					"url": "http://127.0.0.1:5000/api/v1/auth/register/user?user=omo",
+					"description": "Checks if email already taken",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoib21vIiwiZXhwIjoxNzQ0MDIyMTg4fQ.YzgkfBnAq7OXkSYSkojI8nQuBZ9Mjd5e1U8D7fFr_28",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "85b7315a-a31a-4864-a314-0f9c5c744caf",
+								"exec": [
+									"var iter = pm.environment.get(\"iter\"); ",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is Json\", function() {",
+									"    pm.response.to.be.json",
+									"});",
+									"",
+									"pm.test(\"Response to be OK\", function() {",
+									"    pm.response.to.be.ok",
+									"});",
+									"",
+									"pm.test(\"Response includes data, status and code\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.ownProperty('data');",
+									"    pm.expect(jsonData).to.have.ownProperty('status');",
+									"    pm.expect(jsonData).to.have.ownProperty('code');",
+									"});",
+									"",
+									"if(iter === 1) {",
+									"    pm.test(\"Status to be 'success' and code 'OV0000' for taken username\", function() {",
+									"        var response = pm.response.json();",
+									"        pm.expect(response.status).to.equal('success');",
+									"        pm.expect(response.code).to.eql('OV0000');",
+									"        pm.environment.set(\"username\", \"variable_value\");",
+									"        pm.environment.set(\"iter\", 2);",
+									"        postman.setNextRequest('Username availability');",
+									"        ",
+									"    });",
+									"} else {",
+									"    pm.test(\"Status to be 'success' and code 'OV1111' for free username\", function() {",
+									"        var response = pm.response.json();",
+									"        pm.expect(response.status).to.equal('success');",
+									"        pm.expect(response.code).to.eql('OV0000');",
+									"        pm.environment.set(\"username\", \"omo\");",
+									"        pm.environment.set(\"iter\", 1);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var iter = pm.environment.get(\"iter\"); \n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response is Json\", function() {\n    pm.response.to.be.json\n});\n\npm.test(\"Response to be OK\", function() {\n    pm.response.to.be.ok\n});\n\npm.test(\"Response includes data, status and code\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData).to.have.ownProperty('data');\n    pm.expect(jsonData).to.have.ownProperty('status');\n    pm.expect(jsonData).to.have.ownProperty('code');\n});\n\nif(iter === 1) {\n    pm.test(\"Status to be 'success' and code 'OV0000' for taken username\", function() {\n        var response = pm.response.json();\n        pm.expect(response.status).to.equal('success');\n        pm.expect(response.code).to.eql('OV0000');\n        pm.environment.set(\"username\", \"variable_value\");\n        pm.environment.set(\"iter\", 2);\n        postman.setNextRequest('Username availability');\n        \n    });\n} else {\n    pm.test(\"Status to be 'success' and code 'OV1111' for free username\", function() {\n        var response = pm.response.json();\n        pm.expect(response.status).to.equal('success');\n        pm.expect(response.code).to.eql('OV0000');\n        pm.environment.set(\"username\", \"omo\");\n        pm.environment.set(\"iter\", 1);\n    });\n}",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "1cfda08f-870e-406c-be2e-b992b87e1054",
+					"headers": "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoib21vIiwiZXhwIjoxNzQ0MDIyMTg4fQ.YzgkfBnAq7OXkSYSkojI8nQuBZ9Mjd5e1U8D7fFr_28\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "528411fa-88e7-4b40-a2fb-a1fc555f42ae",
+					"name": "Email availability",
+					"url": "http://127.0.0.1:5000/api/v1/auth/register/email?email=ouvie@ouvie.com",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "email",
+							"value": "ouvie@ouvie.com",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b5a4d932-af05-4a81-835c-998f91970077",
+								"exec": [
+									"var iter = pm.environment.get(\"iter\"); ",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is Json\", function() {",
+									"    pm.response.to.be.json",
+									"});",
+									"",
+									"pm.test(\"Response to be OK\", function() {",
+									"    pm.response.to.be.ok",
+									"});",
+									"",
+									"pm.test(\"Response includes data, status and code\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.ownProperty('data');",
+									"    pm.expect(jsonData).to.have.ownProperty('status');",
+									"    pm.expect(jsonData).to.have.ownProperty('code');",
+									"});",
+									"",
+									"if(iter === 1) {",
+									"    pm.test(\"Status to be 'success' and code 'OV0000' for taken email\", function() {",
+									"        var response = pm.response.json();",
+									"        pm.expect(response.status).to.equal('success');",
+									"        pm.expect(response.code).to.eql('OV0000');",
+									"        pm.environment.set(\"email\", \"$randomPassword\");",
+									"        pm.environment.set(\"iter\", 2);",
+									"        postman.setNextRequest('Email availability');",
+									"        ",
+									"    });",
+									"} else {",
+									"    pm.test(\"Status to be 'success' and code 'OV1111' for free email\", function() {",
+									"        var response = pm.response.json();",
+									"        pm.expect(response.status).to.equal('success');",
+									"        pm.expect(response.code).to.eql('OV0000');",
+									"        pm.environment.set(\"email\", \"ouvie@ouvie.com\");",
+									"        pm.environment.set(\"iter\", 1);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var iter = pm.environment.get(\"iter\"); \n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response is Json\", function() {\n    pm.response.to.be.json\n});\n\npm.test(\"Response to be OK\", function() {\n    pm.response.to.be.ok\n});\n\npm.test(\"Response includes data, status and code\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData).to.have.ownProperty('data');\n    pm.expect(jsonData).to.have.ownProperty('status');\n    pm.expect(jsonData).to.have.ownProperty('code');\n});\n\nif(iter === 1) {\n    pm.test(\"Status to be 'success' and code 'OV0000' for taken email\", function() {\n        var response = pm.response.json();\n        pm.expect(response.status).to.equal('success');\n        pm.expect(response.code).to.eql('OV0000');\n        pm.environment.set(\"email\", \"$randomPassword\");\n        pm.environment.set(\"iter\", 2);\n        postman.setNextRequest('Email availability');\n        \n    });\n} else {\n    pm.test(\"Status to be 'success' and code 'OV1111' for free email\", function() {\n        var response = pm.response.json();\n        pm.expect(response.status).to.equal('success');\n        pm.expect(response.code).to.eql('OV0000');\n        pm.environment.set(\"email\", \"ouvie@ouvie.com\");\n        pm.environment.set(\"iter\", 1);\n    });\n}",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "1cfda08f-870e-406c-be2e-b992b87e1054",
+					"pathVariables": {}
+				},
+				{
+					"id": "633680d7-6a9c-4e39-ada9-7a8e8275a8e5",
+					"name": "reqister",
+					"url": "http://127.0.0.1:5000/api/v1/auth/register/verify?name=Roman Prochazka&user=pomann&email=pomann@ouvie.com&pswd=ouvie&optin=True",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "name",
+							"value": "Roman Prochazka",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "user",
+							"value": "pomann",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "pomann@ouvie.com",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "pswd",
+							"value": "ouvie",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "optin",
+							"value": "True",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "1cfda08f-870e-406c-be2e-b992b87e1054",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		},
+		{
+			"id": "636e68eb-fdfe-4265-a204-28229d33e192",
+			"name": "User Details",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"3fd1219f-50da-4b5b-bc49-db3ed3140974"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "3fd1219f-50da-4b5b-bc49-db3ed3140974",
+					"name": "Retrieve user details",
+					"url": "http://127.0.0.1:5000/api/v1/retrieve/user/details?user=omo",
+					"description": "",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "binary",
+					"headerData": [
+						{
+							"key": "Authorization",
+							"value": "{{token}}",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "571c08e8-087c-417c-93e1-601308c9c780",
+								"exec": [
+									"var iter = pm.environment.get(\"iter\"); ",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is Json\", function() {",
+									"    pm.response.to.be.json",
+									"});",
+									"",
+									"pm.test(\"Response to be OK\", function() {",
+									"    pm.response.to.be.ok",
+									"});",
+									"",
+									"pm.test(\"Response includes data, status and code\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.ownProperty('data');",
+									"    pm.expect(jsonData).to.have.ownProperty('status');",
+									"    pm.expect(jsonData).to.have.ownProperty('code');",
+									"});",
+									"",
+									"if(iter === 1) {",
+									"    pm.test(\"response to have user's Name when the right token is set\", function() {",
+									"        var response = pm.response.json();",
+									"        pm.expect(response.status).to.equal('success');",
+									"        pm.expect(response.code).to.eql('OV1111');",
+									"        pm.expect(response.data).to.eql(pm.environment.get(\"name\"));",
+									"        pm.environment.set(\"token\", \"variable_value\");",
+									"        pm.environment.set(\"iter\", 2);",
+									"        postman.setNextRequest('Retrieve user details');",
+									"    });",
+									"} else if (iter === 2){",
+									"    pm.test(\"Status to be 'failure' and code 'OV0022' when token is wrong\", function() {",
+									"        var response = pm.response.json();",
+									"        pm.expect(response.status).to.equal('failure');",
+									"        pm.expect(response.code).to.eql('OV0022');",
+									"        pm.environment.set(\"iter\", 1);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"preRequestScript": null,
+					"tests": "var iter = pm.environment.get(\"iter\"); \n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Response is Json\", function() {\n    pm.response.to.be.json\n});\n\npm.test(\"Response to be OK\", function() {\n    pm.response.to.be.ok\n});\n\npm.test(\"Response includes data, status and code\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData).to.have.ownProperty('data');\n    pm.expect(jsonData).to.have.ownProperty('status');\n    pm.expect(jsonData).to.have.ownProperty('code');\n});\n\nif(iter === 1) {\n    pm.test(\"response to have user's Name when the right token is set\", function() {\n        var response = pm.response.json();\n        pm.expect(response.status).to.equal('success');\n        pm.expect(response.code).to.eql('OV1111');\n        pm.expect(response.data).to.eql(pm.environment.get(\"name\"));\n        pm.environment.set(\"token\", \"variable_value\");\n        pm.environment.set(\"iter\", 2);\n        postman.setNextRequest('Retrieve user details');\n    });\n} else if (iter === 2){\n    pm.test(\"Status to be 'failure' and code 'OV0022' when token is wrong\", function() {\n        var response = pm.response.json();\n        pm.expect(response.status).to.equal('failure');\n        pm.expect(response.code).to.eql('OV0022');\n        pm.environment.set(\"iter\", 1);\n    });\n}",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "636e68eb-fdfe-4265-a204-28229d33e192",
+					"rawModeData": "",
+					"headers": "Authorization: {{token}}\n",
+					"pathVariables": {}
+				}
+			]
+		},
+		{
+			"id": "8b777c00-e9fb-41b1-8d0e-fc7f9713aa3b",
+			"name": "version control",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"c85a6f1a-d7d1-476b-9cd4-7e7f5c601781",
+				"4016bc17-dff8-4c23-8f67-0c2a583955e2",
+				"49615e5f-8d71-4629-bc72-891db93993c2",
+				"240bcc9c-39f2-4a86-833b-33248e2c657c",
+				"ea50366c-4c19-45fd-82e5-1822ef52aa9f",
+				"902bc0aa-e664-4fa6-80aa-85baf92a272d"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "240bcc9c-39f2-4a86-833b-33248e2c657c",
+					"name": "Retrieve commit files",
+					"url": "http://127.0.0.1:5000/api/v1/retrieve/commit/files?user=omo&pname=omo&branch=master",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "Authorization",
+							"value": "{{token}}",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "pname",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "branch",
+							"value": "master",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "52ed66cf-53e0-459e-b45e-14ae8e2fb441",
+								"exec": [
+									"var iter = pm.environment.get(\"iter\"); ",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response is Json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Response to be OK\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response includes data, status and code\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.ownProperty('data');",
+									"    pm.expect(jsonData).to.have.ownProperty('status');",
+									"    pm.expect(jsonData).to.have.ownProperty('code');",
+									"});",
+									"",
+									"pm.test(\"Status to be 'success' and code 'OV1111'\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.equal('success');",
+									"    pm.expect(jsonData.code).to.equal('OV1111');",
+									"});",
+									"",
+									"pm.test(\"Response to include fileName\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data).to.eql(['poo.mp4'])",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var iter = pm.environment.get(\"iter\"); \n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response is Json\", function() {\n    pm.response.to.be.json;\n});\n\npm.test(\"Response to be OK\", function() {\n    pm.response.to.be.ok;\n});\n\npm.test(\"Response includes data, status and code\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData).to.have.ownProperty('data');\n    pm.expect(jsonData).to.have.ownProperty('status');\n    pm.expect(jsonData).to.have.ownProperty('code');\n});\n\npm.test(\"Status to be 'success' and code 'OV1111'\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.status).to.equal('success');\n    pm.expect(jsonData.code).to.equal('OV1111');\n});\n\npm.test(\"Response to include fileName\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.data).to.eql(['poo.mp4'])\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "8b777c00-e9fb-41b1-8d0e-fc7f9713aa3b",
+					"headers": "Authorization: {{token}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "4016bc17-dff8-4c23-8f67-0c2a583955e2",
+					"name": "Add commit",
+					"url": "http://127.0.0.1:5000/api/v1/add/commit?user=omo&snap=false&pid=1234&phash=4&chash=5&cfiles=poo.mp4",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "snap",
+							"value": "false",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "pid",
+							"value": "1234",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "phash",
+							"value": "4",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "chash",
+							"value": "5",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "cfiles",
+							"value": "poo.mp4",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "branch",
+							"value": "test",
+							"equals": true,
+							"description": "",
+							"enabled": false
+						}
+					],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "8b777c00-e9fb-41b1-8d0e-fc7f9713aa3b",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "49615e5f-8d71-4629-bc72-891db93993c2",
+					"name": "Retrieve commit",
+					"url": "http://127.0.0.1:5000/api/v1/retrieve/commits?user=omo&pid=1234&chash=5",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "pid",
+							"value": "1234",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "chash",
+							"value": "5",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6a02b303-3f7d-4796-8c63-8f3d4541ac32",
+								"exec": [
+									"var iter = pm.environment.get(\"iter\"); ",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response is Json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Response to be OK\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response includes data, status and code\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.ownProperty('data');",
+									"    pm.expect(jsonData).to.have.ownProperty('status');",
+									"    pm.expect(jsonData).to.have.ownProperty('code');",
+									"});",
+									"",
+									"pm.test(\"Status to be 'success' and code 'OV1111'\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.equal('success');",
+									"    pm.expect(jsonData.code).to.equal('OV1111');",
+									"});",
+									"",
+									"pm.test(\"Response to include [1,2,3,4,5]\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data).to.eql(['1','2','3','4','5'])",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var iter = pm.environment.get(\"iter\"); \n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response is Json\", function() {\n    pm.response.to.be.json;\n});\n\npm.test(\"Response to be OK\", function() {\n    pm.response.to.be.ok;\n});\n\npm.test(\"Response includes data, status and code\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData).to.have.ownProperty('data');\n    pm.expect(jsonData).to.have.ownProperty('status');\n    pm.expect(jsonData).to.have.ownProperty('code');\n});\n\npm.test(\"Status to be 'success' and code 'OV1111'\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.status).to.equal('success');\n    pm.expect(jsonData.code).to.equal('OV1111');\n});\n\npm.test(\"Response to include [1,2,3,4,5]\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.data).to.eql(['1','2','3','4','5'])\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "8b777c00-e9fb-41b1-8d0e-fc7f9713aa3b",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "902bc0aa-e664-4fa6-80aa-85baf92a272d",
+					"name": "Retrieve branch count",
+					"url": "http://127.0.0.1:5000/api/v1/retrieve/branch/count?user=omo&pname=omo",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "Authorization",
+							"value": "{{token}}",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "pname",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "71ef8e9b-561c-4243-9e73-c476e4be4361",
+								"exec": [
+									"var iter = pm.environment.get(\"iter\"); ",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response is Json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Response to be OK\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response includes data, status and code\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.ownProperty('data');",
+									"    pm.expect(jsonData).to.have.ownProperty('status');",
+									"    pm.expect(jsonData).to.have.ownProperty('code');",
+									"});",
+									"",
+									"pm.test(\"Status to be 'success' and code 'OV1111'\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.equal('success');",
+									"    pm.expect(jsonData.code).to.equal('OV1111');",
+									"});",
+									"",
+									"pm.test(\"Response to include all branches\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data).to.eql(['master'])",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var iter = pm.environment.get(\"iter\"); \n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response is Json\", function() {\n    pm.response.to.be.json;\n});\n\npm.test(\"Response to be OK\", function() {\n    pm.response.to.be.ok;\n});\n\npm.test(\"Response includes data, status and code\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData).to.have.ownProperty('data');\n    pm.expect(jsonData).to.have.ownProperty('status');\n    pm.expect(jsonData).to.have.ownProperty('code');\n});\n\npm.test(\"Status to be 'success' and code 'OV1111'\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.status).to.equal('success');\n    pm.expect(jsonData.code).to.equal('OV1111');\n});\n\npm.test(\"Response to include all branches\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.data).to.eql(['master'])\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "8b777c00-e9fb-41b1-8d0e-fc7f9713aa3b",
+					"headers": "Authorization: {{token}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "c85a6f1a-d7d1-476b-9cd4-7e7f5c601781",
+					"name": "Add project",
+					"url": "http://127.0.0.1:5000/api/v1/add/project?user=omo&name=CountApp&pid=1234",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "name",
+							"value": "CountApp",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "pid",
+							"value": "1234",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [],
+					"folder": null,
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "8b777c00-e9fb-41b1-8d0e-fc7f9713aa3b",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "ea50366c-4c19-45fd-82e5-1822ef52aa9f",
+					"name": "Retrieve commit count",
+					"url": "http://127.0.0.1:5000/api/v1/retrieve/commit/count?user=omo&pname=omo",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "Authorization",
+							"value": "{{token}}",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "pname",
+							"value": "omo",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "branch",
+							"value": "master",
+							"description": "",
+							"enabled": false
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a646724f-08f3-436d-9eda-2e42d584430e",
+								"exec": [
+									"var iter = pm.environment.get(\"iter\"); ",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response is Json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Response to be OK\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response includes data, status and code\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.ownProperty('data');",
+									"    pm.expect(jsonData).to.have.ownProperty('status');",
+									"    pm.expect(jsonData).to.have.ownProperty('code');",
+									"});",
+									"",
+									"pm.test(\"Status to be 'success' and code 'OV1111'\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.equal('success');",
+									"    pm.expect(jsonData.code).to.equal('OV1111');",
+									"});",
+									"",
+									"pm.test(\"Response to include total number of commits\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data).to.eql([8])",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var iter = pm.environment.get(\"iter\"); \n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response is Json\", function() {\n    pm.response.to.be.json;\n});\n\npm.test(\"Response to be OK\", function() {\n    pm.response.to.be.ok;\n});\n\npm.test(\"Response includes data, status and code\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData).to.have.ownProperty('data');\n    pm.expect(jsonData).to.have.ownProperty('status');\n    pm.expect(jsonData).to.have.ownProperty('code');\n});\n\npm.test(\"Status to be 'success' and code 'OV1111'\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.status).to.equal('success');\n    pm.expect(jsonData.code).to.equal('OV1111');\n});\n\npm.test(\"Response to include total number of commits\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData.data).to.eql([8])\n});\n",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "8b777c00-e9fb-41b1-8d0e-fc7f9713aa3b",
+					"headers": "Authorization: {{token}}\n",
+					"pathVariables": {}
+				}
+			]
+		},
+		{
+			"id": "b5d35318-9ff2-4946-b164-899aceb3bcf7",
+			"name": "Login",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [
+				"8a1c7144-016d-41f8-871a-c75d928eaad7"
+			],
+			"folders_order": [],
+			"protocolProfileBehavior": {},
+			"folders": [],
+			"requests": [
+				{
+					"id": "8a1c7144-016d-41f8-871a-c75d928eaad7",
+					"name": "Login authentication",
+					"url": "http://127.0.0.1:5000/api/v1/auth/login?user={{username}}&password={{password}}",
+					"description": "Checks if username and password in the database",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "user",
+							"value": "{{username}}",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7713ca71-16e7-4e30-8b72-654dec82d5ed",
+								"exec": [
+									"var iter = pm.environment.get(\"iter\"); ",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response is Json\", function() {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Response to be OK\", function() {",
+									"    pm.response.to.be.ok;",
+									"});",
+									"",
+									"pm.test(\"Response includes data, status and code\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.ownProperty('data');",
+									"    pm.expect(jsonData).to.have.ownProperty('status');",
+									"    pm.expect(jsonData).to.have.ownProperty('code');",
+									"});",
+									"",
+									"if (iter === 1) {",
+									"    pm.test(\"Status to be 'success' and code 'OV1111' for corrent login details\", function() {",
+									"        let jsonData = pm.response.json();",
+									"        pm.expect(jsonData.status).to.equal('success');",
+									"        pm.expect(jsonData.code).to.equal('OV1111');",
+									"    });",
+									"    ",
+									"    pm.test(\"Response includes email\", function() {",
+									"        let jsonData = pm.response.json();",
+									"        pm.expect(jsonData.data[0]).to.equal(pm.environment.get(\"email\"));",
+									"    });",
+									"    ",
+									"    pm.test(\"Response to include Authorization Token\", function() {",
+									"        let jsonData = pm.response.json();",
+									"        pm.expect(jsonData.data[1]).to.match(/^[A-Za-z0-9-_=]+\\.[A-Za-z0-9-_=]+\\.?[A-Za-z0-9-_+/=]*$/);",
+									"        pm.environment.set(\"token\", jsonData.data[1]);",
+									"        pm.environment.set(\"password\", \"$randomPassword\");",
+									"        pm.environment.set(\"iter\", 2);",
+									"        postman.setNextRequest('Login authentication');",
+									"    });",
+									"} else {",
+									"    pm.test(\"Status to be 'success' and code 'OV0000' for incorrent login details\", function() {",
+									"        let jsonData = pm.response.json();",
+									"        pm.expect(jsonData.status).to.equal('success');",
+									"        pm.expect(jsonData.code).to.equal('OV0000');",
+									"        pm.environment.set(\"iter\", 1);",
+									"        pm.environment.set(\"password\", pm.environment.get(\"passwordStatic\"));",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": null,
+					"preRequestScript": null,
+					"tests": "var iter = pm.environment.get(\"iter\"); \n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response is Json\", function() {\n    pm.response.to.be.json;\n});\n\npm.test(\"Response to be OK\", function() {\n    pm.response.to.be.ok;\n});\n\npm.test(\"Response includes data, status and code\", function() {\n    let jsonData = pm.response.json();\n    pm.expect(jsonData).to.have.ownProperty('data');\n    pm.expect(jsonData).to.have.ownProperty('status');\n    pm.expect(jsonData).to.have.ownProperty('code');\n});\n\nif (iter === 1) {\n    pm.test(\"Status to be 'success' and code 'OV1111' for corrent login details\", function() {\n        let jsonData = pm.response.json();\n        pm.expect(jsonData.status).to.equal('success');\n        pm.expect(jsonData.code).to.equal('OV1111');\n    });\n    \n    pm.test(\"Response includes email\", function() {\n        let jsonData = pm.response.json();\n        pm.expect(jsonData.data[0]).to.equal(pm.environment.get(\"email\"));\n    });\n    \n    pm.test(\"Response to include Authorization Token\", function() {\n        let jsonData = pm.response.json();\n        pm.expect(jsonData.data[1]).to.match(/^[A-Za-z0-9-_=]+\\.[A-Za-z0-9-_=]+\\.?[A-Za-z0-9-_+/=]*$/);\n        pm.environment.set(\"token\", jsonData.data[1]);\n        pm.environment.set(\"password\", \"$randomPassword\");\n        pm.environment.set(\"iter\", 2);\n        postman.setNextRequest('Login authentication');\n    });\n} else {\n    pm.test(\"Status to be 'success' and code 'OV0000' for incorrent login details\", function() {\n        let jsonData = pm.response.json();\n        pm.expect(jsonData.status).to.equal('success');\n        pm.expect(jsonData.code).to.equal('OV0000');\n        pm.environment.set(\"iter\", 1);\n        pm.environment.set(\"password\", pm.environment.get(\"passwordStatic\"));\n    });\n}",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "b5d35318-9ff2-4946-b164-899aceb3bcf7",
+					"headers": "",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "6ad9b5a6-c4c8-4d58-8926-09868394acaa",
+			"name": "Ouvie",
+			"values": [
+				{
+					"key": "username",
+					"value": "omo",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "ouvie@ouvie.com",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "ouvie",
+					"enabled": true
+				},
+				{
+					"key": "iter",
+					"value": "1",
+					"enabled": true
+				},
+				{
+					"key": "passwordStatic",
+					"value": "ouvie",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "Roman Prochazka",
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "8bb45bec-3c59-43a6-8694-eae4b9297397",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}

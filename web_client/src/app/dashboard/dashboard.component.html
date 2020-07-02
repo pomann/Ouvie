@@ -1,0 +1,17 @@
+<div id="dashboard-top-panel">
+  <div id="menu">
+    <ul>
+      <li><img src="../../assets/images/logo.png" width="35px" height="35px"></li>
+      <li (click)='displayProjects()'>Projects</li>
+      <li>Groups</li>
+      <li>Activity</li>
+      <li id="username" style="float: right;" (click)='toggleUserDetails();'>{{ this.username }}</li>
+    </ul>
+  </div>
+  <app-user-details  id="user-details" *ngIf='showUserDetails' [username]='username' [email]='email' (isLoggedOut)=logout($event)></app-user-details>
+</div>
+
+<div id="dashboard-wrapper">
+  <app-project-details *ngIf='showProjectDetails' [projectName]='activeProject' [username]='username' (showProjects)='displayProjects($event)'></app-project-details>
+  <app-dashboard-projects id="dashboard-workspace-projects" *ngIf='showProjects' [username]='username' (projectName)=setProjectName($event)></app-dashboard-projects>
+</div>

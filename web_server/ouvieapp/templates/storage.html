@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bucket</title>
+  </head>
+  <body>
+    <div class="content">
+        <h3>First Bucket Contents</h3>
+        <p>Contents of my first bucket</p>
+        <div>
+          <h3>Upload your file here:</h3>
+          <form method="POST" action="/upload" enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+          </form>
+        </div>
+        <div>
+          <h3>These are your uploaded files:</h3>
+          <p>Click on the filename to download it.</p>
+          <ul>
+            {% for item in contents %}
+              <li>
+                <a href="/download/{{ item }}"> {{ item }} </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+    </div>
+  </body>
+</html>

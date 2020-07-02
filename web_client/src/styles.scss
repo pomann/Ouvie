@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body{
+  background-color: #F9F9F9;
+  height: 100%;
+}
+
+.offers-container{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.offer{
+  margin-right: 5px;
+  margin-top: 30px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  border-radius: 10px;
+}
+
+.offer:last-child{
+  margin-right: 0px;
+}
+
+.offer:first-child{
+  margin-right: 5px;
+}
+
+.linkText {
+  color: blue;
+}
+
+.linkText:hover {
+  cursor: pointer;
+}
+
+.req-ast {
+  color: red;
+}
+
+.hint-text {
+  color: gray;
+}
+
+.header-centre {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#logo:hover {
+  cursor: pointer;
+}
+
+.valid-error {
+  color: red;
+}

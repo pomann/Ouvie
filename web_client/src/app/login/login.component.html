@@ -1,0 +1,40 @@
+<div id="login-wrapper">
+  <div class="header-centre">
+    <img src="../../assets/images/logo.png" width="200px" height="200px" id='logo' routerLink=''>
+    <h1>Login to Ouvie</h1>
+  </div>
+
+  <div id="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)='onSubmit()'>
+      <fieldset>
+        <label for="user">Username</label><br>
+        <input formControlName="username" class="inputField" id="user" type="text" required> <br>
+
+        <label for="pass">Password</label><br>
+        <input formControlName="password" class="inputField" id="pass" type="password" required> <br>
+
+        <ul>
+          <li><input type="checkbox"> Remember me<br></li>
+          <li><span class="linkText">Forgot password</span></li>
+        </ul>
+
+        <button id="loginBtn">Login</button>
+      </fieldset>
+      <div style="color: red" *ngIf="isInvalid" [ngClass]="">Invalid Username or Password</div>
+      <div style="color: green;" *ngIf="rsp" [ngClass]=''>Login Successful</div>
+    </form>
+  </div>
+
+  <div id="signup-container">
+  <p>Don't have an account yet? <span class="linkText" routerLink='/register'>Sign Up now.</span></p>
+  </div>
+
+  <div id="login-footer">
+    <ul>
+      <li class="linkText">Service Status</li>
+      <li class="linkText">Terms & Conditions</li>
+      <li class="linkText">Privacy Policy</li>
+      <li>&copy;2020 Ouvie, Inc.</li>
+    </ul>
+  </div>
+</div>

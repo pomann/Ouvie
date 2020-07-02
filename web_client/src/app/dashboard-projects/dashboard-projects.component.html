@@ -1,0 +1,15 @@
+<div id="dashboard-workspace-projects-wrapper">
+  <div id="project-header">
+    <h2 class="project-item-details">Projects</h2>
+    <button id="new-project-btn" class="project-item-details">New Project</button>
+  </div>
+  <hr>
+  <div id="project-search"></div>
+  <div class="project-item" *ngFor='let item of projects ;let i = index'>
+    <div id="project-icon" class="project-item-details" (click)='displayProject(item)' >{{ item[0].toUpperCase() }}</div>
+    <div id="project-details" class="project-item-details">
+      <h2 class="linkText" (click)='displayProject(item);'> {{ item }}</h2>
+      <span>Project Description goes here</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B7689BCF242D36F200584EC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7689BCE242D36F200584EC4 /* AppDelegate.swift */; };
+		B7689BD3242D36F400584EC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7689BD2242D36F400584EC4 /* Assets.xcassets */; };
+		B7689BD6242D36F400584EC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7689BD4242D36F400584EC4 /* Main.storyboard */; };
+		B7689BE2242D36F400584EC4 /* OuvieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7689BE1242D36F400584EC4 /* OuvieTests.swift */; };
+		B7689BED242D36F400584EC4 /* OuvieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7689BEC242D36F400584EC4 /* OuvieUITests.swift */; };
+		B7F0996E24605CE7003B5DDD /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0996D24605CE7003B5DDD /* DashboardController.swift */; };
+		B7F099762460C737003B5DDD /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F099752460C737003B5DDD /* ContainerController.swift */; };
+		B7F0997824617603003B5DDD /* LoginSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0997724617603003B5DDD /* LoginSplitController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B7689BDE242D36F400584EC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7689BC3242D36F200584EC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7689BCA242D36F200584EC4;
+			remoteInfo = Ouvie;
+		};
+		B7689BE9242D36F400584EC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7689BC3242D36F200584EC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7689BCA242D36F200584EC4;
+			remoteInfo = Ouvie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B7689BCB242D36F200584EC4 /* Ouvie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ouvie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7689BCE242D36F200584EC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B7689BD2242D36F400584EC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7689BD5242D36F400584EC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B7689BD7242D36F400584EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7689BD8242D36F400584EC4 /* Ouvie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ouvie.entitlements; sourceTree = "<group>"; };
+		B7689BDD242D36F400584EC4 /* OuvieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OuvieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7689BE1242D36F400584EC4 /* OuvieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuvieTests.swift; sourceTree = "<group>"; };
+		B7689BE3242D36F400584EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7689BE8242D36F400584EC4 /* OuvieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OuvieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7689BEC242D36F400584EC4 /* OuvieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuvieUITests.swift; sourceTree = "<group>"; };
+		B7689BEE242D36F400584EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7F0996D24605CE7003B5DDD /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		B7F099752460C737003B5DDD /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		B7F0997724617603003B5DDD /* LoginSplitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSplitController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7689BC8242D36F200584EC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7689BDA242D36F400584EC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7689BE5242D36F400584EC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B7689BC2242D36F200584EC4 = {
+			isa = PBXGroup;
+			children = (
+				B7689BCD242D36F200584EC4 /* Ouvie */,
+				B7689BE0242D36F400584EC4 /* OuvieTests */,
+				B7689BEB242D36F400584EC4 /* OuvieUITests */,
+				B7689BCC242D36F200584EC4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B7689BCC242D36F200584EC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7689BCB242D36F200584EC4 /* Ouvie.app */,
+				B7689BDD242D36F400584EC4 /* OuvieTests.xctest */,
+				B7689BE8242D36F400584EC4 /* OuvieUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7689BCD242D36F200584EC4 /* Ouvie */ = {
+			isa = PBXGroup;
+			children = (
+				B7689BCE242D36F200584EC4 /* AppDelegate.swift */,
+				B7689BD2242D36F400584EC4 /* Assets.xcassets */,
+				B7689BD4242D36F400584EC4 /* Main.storyboard */,
+				B7689BD7242D36F400584EC4 /* Info.plist */,
+				B7689BD8242D36F400584EC4 /* Ouvie.entitlements */,
+				B7F0996D24605CE7003B5DDD /* DashboardController.swift */,
+				B7F099752460C737003B5DDD /* ContainerController.swift */,
+				B7F0997724617603003B5DDD /* LoginSplitController.swift */,
+			);
+			path = Ouvie;
+			sourceTree = "<group>";
+		};
+		B7689BE0242D36F400584EC4 /* OuvieTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7689BE1242D36F400584EC4 /* OuvieTests.swift */,
+				B7689BE3242D36F400584EC4 /* Info.plist */,
+			);
+			path = OuvieTests;
+			sourceTree = "<group>";
+		};
+		B7689BEB242D36F400584EC4 /* OuvieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B7689BEC242D36F400584EC4 /* OuvieUITests.swift */,
+				B7689BEE242D36F400584EC4 /* Info.plist */,
+			);
+			path = OuvieUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7689BCA242D36F200584EC4 /* Ouvie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7689BF1242D36F400584EC4 /* Build configuration list for PBXNativeTarget "Ouvie" */;
+			buildPhases = (
+				B7689BC7242D36F200584EC4 /* Sources */,
+				B7689BC8242D36F200584EC4 /* Frameworks */,
+				B7689BC9242D36F200584EC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ouvie;
+			productName = Ouvie;
+			productReference = B7689BCB242D36F200584EC4 /* Ouvie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B7689BDC242D36F400584EC4 /* OuvieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7689BF4242D36F400584EC4 /* Build configuration list for PBXNativeTarget "OuvieTests" */;
+			buildPhases = (
+				B7689BD9242D36F400584EC4 /* Sources */,
+				B7689BDA242D36F400584EC4 /* Frameworks */,
+				B7689BDB242D36F400584EC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7689BDF242D36F400584EC4 /* PBXTargetDependency */,
+			);
+			name = OuvieTests;
+			productName = OuvieTests;
+			productReference = B7689BDD242D36F400584EC4 /* OuvieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B7689BE7242D36F400584EC4 /* OuvieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7689BF7242D36F400584EC4 /* Build configuration list for PBXNativeTarget "OuvieUITests" */;
+			buildPhases = (
+				B7689BE4242D36F400584EC4 /* Sources */,
+				B7689BE5242D36F400584EC4 /* Frameworks */,
+				B7689BE6242D36F400584EC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7689BEA242D36F400584EC4 /* PBXTargetDependency */,
+			);
+			name = OuvieUITests;
+			productName = OuvieUITests;
+			productReference = B7689BE8242D36F400584EC4 /* OuvieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7689BC3242D36F200584EC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Roman Prochazka";
+				TargetAttributes = {
+					B7689BCA242D36F200584EC4 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B7689BDC242D36F400584EC4 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = B7689BCA242D36F200584EC4;
+					};
+					B7689BE7242D36F400584EC4 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = B7689BCA242D36F200584EC4;
+					};
+				};
+			};
+			buildConfigurationList = B7689BC6242D36F200584EC4 /* Build configuration list for PBXProject "Ouvie" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7689BC2242D36F200584EC4;
+			productRefGroup = B7689BCC242D36F200584EC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7689BCA242D36F200584EC4 /* Ouvie */,
+				B7689BDC242D36F400584EC4 /* OuvieTests */,
+				B7689BE7242D36F400584EC4 /* OuvieUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7689BC9242D36F200584EC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7689BD3242D36F400584EC4 /* Assets.xcassets in Resources */,
+				B7689BD6242D36F400584EC4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7689BDB242D36F400584EC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7689BE6242D36F400584EC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7689BC7242D36F200584EC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7F099762460C737003B5DDD /* ContainerController.swift in Sources */,
+				B7F0996E24605CE7003B5DDD /* DashboardController.swift in Sources */,
+				B7F0997824617603003B5DDD /* LoginSplitController.swift in Sources */,
+				B7689BCF242D36F200584EC4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7689BD9242D36F400584EC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7689BE2242D36F400584EC4 /* OuvieTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7689BE4242D36F400584EC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7689BED242D36F400584EC4 /* OuvieUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7689BDF242D36F400584EC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7689BCA242D36F200584EC4 /* Ouvie */;
+			targetProxy = B7689BDE242D36F400584EC4 /* PBXContainerItemProxy */;
+		};
+		B7689BEA242D36F400584EC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7689BCA242D36F200584EC4 /* Ouvie */;
+			targetProxy = B7689BE9242D36F400584EC4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B7689BD4242D36F400584EC4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7689BD5242D36F400584EC4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7689BEF242D36F400584EC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B7689BF0242D36F400584EC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		B7689BF2242D36F400584EC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Ouvie/Ouvie.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Ouvie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ouvie.Ouvie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B7689BF3242D36F400584EC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Ouvie/Ouvie.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Ouvie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ouvie.Ouvie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B7689BF5242D36F400584EC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OuvieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = ouvie.OuvieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ouvie.app/Contents/MacOS/Ouvie";
+			};
+			name = Debug;
+		};
+		B7689BF6242D36F400584EC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OuvieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = ouvie.OuvieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ouvie.app/Contents/MacOS/Ouvie";
+			};
+			name = Release;
+		};
+		B7689BF8242D36F400584EC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OuvieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ouvie.OuvieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Ouvie;
+			};
+			name = Debug;
+		};
+		B7689BF9242D36F400584EC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OuvieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ouvie.OuvieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Ouvie;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7689BC6242D36F200584EC4 /* Build configuration list for PBXProject "Ouvie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7689BEF242D36F400584EC4 /* Debug */,
+				B7689BF0242D36F400584EC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7689BF1242D36F400584EC4 /* Build configuration list for PBXNativeTarget "Ouvie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7689BF2242D36F400584EC4 /* Debug */,
+				B7689BF3242D36F400584EC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7689BF4242D36F400584EC4 /* Build configuration list for PBXNativeTarget "OuvieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7689BF5242D36F400584EC4 /* Debug */,
+				B7689BF6242D36F400584EC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7689BF7242D36F400584EC4 /* Build configuration list for PBXNativeTarget "OuvieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7689BF8242D36F400584EC4 /* Debug */,
+				B7689BF9242D36F400584EC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7689BC3242D36F200584EC4 /* Project object */;
+}

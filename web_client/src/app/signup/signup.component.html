@@ -1,0 +1,54 @@
+<div id="signup-wrapper">
+  <div class="header-centre">
+    <img src="../../assets/images/logo.png" width="200px" height="200px" id='logo' routerLink=''>
+    <h5>Join Ouvie</h5>
+    <h1>Create an Account</h1>
+  </div>
+
+  <div id="signup-container">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <span class="req-ast">*</span> <label for="name"></label>Full name <br>
+        <input formControlName="fullName" class="inputField" [ngClass]="{ 'is-invalid': f.fullName.errors && (submitted || submitted) }" type="text" placeholder="John Doe" required> <br>
+        <div class='valid-error' *ngIf="f.fullName.errors?.required && submitted ">Name is required</div>
+        <div class='valid-error' *ngIf="f.fullName.errors?.valid && f.fullName.touched ">Invalid username</div>
+
+        <span class="req-ast">*</span> <label for="user"></label>Username <br>
+        <input formControlName="username" class="inputField" [ngClass]="{ 'is-invalid': f.username.errors && (submitted || submitted) }" type="text" placeholder="pomann" required> <br>
+        <div class='valid-error' *ngIf="f.username.errors?.required && submitted ">Username is required</div>
+        <div class='valid-error' *ngIf="(f.username.errors?.valid || f.username.errors?.free) && f.username.touched ">Invalid or taken username</div>
+
+        <span class="req-ast">*</span> <label for="email"></label>Email <br>
+        <input formControlName="email" class="inputField" [ngClass]="{ 'is-invalid': f.email.errors && (f.email.touched || submitted) }" type="email" placeholder="John.Doe@ouvie.com" required> <br>
+        <div class='valid-error' *ngIf="(f.email.errors?.email || f.email.errors?.free) && f.email.touched ">Invalid or taken Email</div>
+        <div class='valid-error' *ngIf="f.email.errors?.required && submitted ">Email is required</div>
+
+        <span class="req-ast">*</span> <label for="email-conf"></label>Email confirmation <br>
+        <input formControlName="confirmEmail" class="inputField" [ngClass]="{ 'is-invalid': f.confirmEmail.errors && (f.confirmEmail.touched || submitted) }" type="email" required> <br>
+        <div class='valid-error' *ngIf="f.confirmEmail.errors?.mustMatch && f.confirmEmail.touched ">Emails must match</div>
+        <div class='valid-error' *ngIf="f.confirmEmail.errors?.required && submitted ">Email confirmation is required</div>
+
+        <span class="req-ast">*</span> <label for="pass"></label>Password <br>
+        <input formControlName="password" class="inputField" [ngClass]="{ 'is-invalid': f.password.errors && (f.password.touched || submitted) }" type="password" required> <br>
+        <div class='valid-error' *ngIf="f.password.errors?.minlength && f.password.touched">Password must be at least 6 characters</div>
+        <div class='valid-error' *ngIf="f.password.errors?.required && submitted ">Password is required</div>
+
+        <span class="req-ast">*</span> <label for="pass-conf"></label>Password confirmation <br>
+        <input formControlName="confirmPassword" class="inputField" [ngClass]="{ 'is-invalid': f.confirmPassword.errors && (f.confirmPassword.touched || submitted) }" type="password" required> <br>
+        <div class='valid-error' *ngIf="f.confirmPassword.errors?.mustMatch && f.confirmPassword.touched ">Passwords must match</div>
+        <div class='valid-error' *ngIf="f.confirmPassword.errors?.required && submitted ">Password confirmation is required</div>
+
+        <label for="optIn">Email Preferences <br> <input type="checkbox" formControlName="optIn"> </label>
+        Send me occasional updates about products. <br>
+
+        <button id="registerBtn">Register</button>
+
+        <p class="hint-text">By creating an account, you agree to the <span class="linkText">Terms of Service</span> and <span class="linkText">Privacy Policy</span>. </p>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<div id="login-container">
+ <p>Already a member? <span class="linkText" routerLink='/login'>Login now.</span></p>
+</div>
